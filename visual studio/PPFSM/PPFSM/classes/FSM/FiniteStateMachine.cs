@@ -19,6 +19,9 @@ namespace FSM
         // All states which are part of this FSM
         public Dictionary<String,State> _states = new Dictionary<String,State>();
 
+        // All transitions which are part of this FSM
+        public Dictionary<String, Transition> _transitions = new Dictionary<String, Transition>();
+
         /// <summary>
         /// Return finite state machine instance based on the key
         /// </summary>
@@ -53,6 +56,15 @@ namespace FSM
         public void AddState(State state)
         {
             _states.Add(state.UniqueKey, state);
+        }
+
+        /// <summary>
+        /// Attach a transition to the FSM
+        /// </summary>
+        /// <param name="transition"></param>
+        public void AddTransition(Transition transition)
+        {
+            _transitions.Add(transition.UniqueKey, transition);
         }
 
         /// <summary>

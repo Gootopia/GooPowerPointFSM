@@ -159,6 +159,7 @@
   <ItemGroup>
     <Compile Include="classes\FSM\FiniteStateMachine.cs" />
     <Compile Include="classes\FSM\State.cs" />
+    <Compile Include="classes\FSM\Transition.cs" />
     <Compile Include="classes\FSM\UniqueKeyGenerator.cs" />
     <Compile Include="classes\MyPowerPoint.cs" />
     <Compile Include="controls\ribbons\FSMRibbon.cs">

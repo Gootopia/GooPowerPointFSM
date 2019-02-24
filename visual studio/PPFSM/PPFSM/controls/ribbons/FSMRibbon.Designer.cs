@@ -116,6 +116,7 @@
             // 
             this.btnFSM_NewTransition.Label = "New Transition";
             this.btnFSM_NewTransition.Name = "btnFSM_NewTransition";
+            this.btnFSM_NewTransition.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnFSM_NewTransition_Click);
             // 
             // DEBUG
             // 

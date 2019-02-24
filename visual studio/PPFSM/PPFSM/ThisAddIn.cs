@@ -3,6 +3,7 @@ using System.Windows.Shapes;
 using System;
 using System.Windows.Media;
 using FSM;
+using Microsoft.Office.Interop.PowerPoint;
 
 namespace PPFSM
 {
@@ -58,8 +59,25 @@ namespace PPFSM
             }
         }
 
+        /// <summary>
+        /// User Clicks on something
+        /// </summary>
+        /// <param name="Sel"></param>
         private void Application_WindowSelectionChange(PowerPoint.Selection Sel)
         {
+            if(Sel.Type == PpSelectionType.ppSelectionShapes)
+            {            
+                if (Sel.ShapeRange.Count == 2)
+                {
+                    // Selecting 2 shapes enables the "new transition" activity
+                    Globals.Ribbons.FSMRibbon.btnFSM_NewTransition.Enabled = true;
+                }
+            }
+            else
+            {
+                // New Transition requires us to select to states. Everything else is invalid.
+                Globals.Ribbons.FSMRibbon.btnFSM_NewTransition.Enabled = false;
+            }
             // This code gets triggered every time you click on anything
         }
 
